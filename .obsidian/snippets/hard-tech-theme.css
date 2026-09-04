@@ -1,0 +1,364 @@
+/* ===== Hard Tech Theme — 硬朗科技风 · Black + Gold + Navy ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* --- 色板 --- */
+:root {
+  --ht-bg: #0d0f13;
+  --ht-sidebar: #0a0c10;
+  --ht-card: #111318;
+  --ht-hover: #181b22;
+  --ht-active: #1c1f28;
+  --ht-border: #1e2130;
+  --ht-border-light: #2a2e3c;
+  --ht-gold: #c9a050;
+  --ht-gold-bright: #e0b860;
+  --ht-gold-pale: #f0d890;
+  --ht-navy: #1b3a5c;
+  --ht-navy-light: #255d8c;
+  --ht-navy-bright: #3078c0;
+  --ht-cyan: #00b8d4;
+  --ht-cyan-dim: #00889c;
+  --ht-text: #dce2e8;
+  --ht-text-bright: #f0f3f6;
+  --ht-text-dim: #8b929e;
+  --ht-text-faint: #5b6270;
+  --ht-code-bg: #16181f;
+  --ht-highlight: rgba(201, 160, 80, 0.25);
+  --ht-highlight-text: #f0d890;
+}
+
+body {
+  --background-primary: var(--ht-bg);
+  --background-primary-alt: var(--ht-sidebar);
+  --background-secondary: var(--ht-sidebar);
+  --background-secondary-alt: var(--ht-card);
+  --background-modifier-border: var(--ht-border);
+  --background-modifier-border-hover: var(--ht-border-light);
+  --background-modifier-border-focus: var(--ht-navy-light);
+  --background-modifier-hover: var(--ht-hover);
+  --background-modifier-active-hover: var(--ht-active);
+  --text-normal: var(--ht-text);
+  --text-muted: var(--ht-text-dim);
+  --text-faint: var(--ht-text-faint);
+  --text-accent: var(--ht-gold-bright);
+  --text-accent-hover: var(--ht-gold-pale);
+  --text-highlight-bg: var(--ht-highlight);
+  --text-selection: rgba(27, 58, 92, 0.5);
+  --code-background: var(--ht-code-bg);
+  --interactive-accent: var(--ht-navy-bright);
+  --interactive-accent-hover: var(--ht-cyan);
+  --interactive-accent-hsl: 210, 50%, 40%;
+  --interactive-accent-hover-hsl: 190, 100%, 40%;
+  --text-on-accent: #0d0f13;
+  --font-interface: "Rajdhani", "Share Tech", "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --font-text: "Rajdhani", "Share Tech", "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --font-monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+}
+
+/* ===== 全局基底 ===== */
+body {
+  letter-spacing: 0.02em;
+}
+
+/* ===== h1 — Orbitron 几何科技感 ===== */
+.markdown-rendered h1,
+.cm-header-1 {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  color: var(--ht-gold-bright);
+  font-weight: 700;
+  font-size: 1.8em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--ht-gold);
+  padding-bottom: 0.2em;
+}
+
+/* ===== h2 — Orbitron 次级 ===== */
+.markdown-rendered h2,
+.cm-header-2 {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  color: var(--ht-gold);
+  font-weight: 600;
+  font-size: 1.4em;
+  letter-spacing: 0.06em;
+  border-left: 3px solid var(--ht-gold);
+  padding-left: 0.5em;
+}
+
+/* ===== h3 — 海军蓝点缀 ===== */
+.markdown-rendered h3,
+.cm-header-3 {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  color: var(--ht-navy-bright);
+  font-weight: 600;
+  font-size: 1.2em;
+  letter-spacing: 0.04em;
+}
+
+/* ===== h4-h6 ===== */
+.markdown-rendered h4,
+.cm-header-4 {
+  color: var(--ht-cyan);
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.markdown-rendered h5,
+.cm-header-5 {
+  color: var(--ht-text-bright);
+  font-weight: 600;
+}
+
+.markdown-rendered h6,
+.cm-header-6 {
+  color: var(--ht-text-dim);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ===== 链接 ===== */
+a.internal-link,
+.cm-hmd-internal-link {
+  color: var(--ht-navy-bright);
+  font-weight: 600;
+  text-decoration: none;
+}
+a.internal-link:hover,
+.cm-hmd-internal-link:hover {
+  color: var(--ht-cyan);
+  text-decoration: underline solid var(--ht-navy-bright);
+}
+a.external-link {
+  color: var(--ht-gold);
+  font-weight: 600;
+}
+a.external-link:hover {
+  color: var(--ht-gold-bright);
+}
+
+/* ===== 粗体 / 斜体 ===== */
+.cm-strong,
+strong {
+  color: var(--ht-gold-bright);
+  font-weight: 700;
+}
+.cm-em,
+em {
+  color: var(--ht-cyan);
+  font-weight: 500;
+}
+
+/* ===== 引用块 ===== */
+.markdown-rendered blockquote {
+  border-left: 3px solid var(--ht-gold);
+  background-color: rgba(201, 160, 80, 0.06);
+  color: var(--ht-text-dim);
+  font-style: italic;
+}
+
+/* ===== 表格 — 军工数据感 ===== */
+.markdown-rendered table {
+  border-color: var(--ht-border-light);
+}
+.markdown-rendered th {
+  background-color: var(--ht-navy);
+  color: var(--ht-gold-pale);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+.markdown-rendered tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+.markdown-rendered tr:nth-child(odd) {
+  background-color: transparent;
+}
+.markdown-rendered td {
+  border-color: var(--ht-border);
+}
+
+/* ===== 代码 ===== */
+.cm-s-obsidian .cm-inline-code,
+.markdown-rendered code {
+  color: var(--ht-cyan);
+  background-color: var(--ht-code-bg);
+  border: 1px solid var(--ht-border);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.9em;
+}
+
+.markdown-rendered pre {
+  background-color: var(--ht-code-bg);
+  border: 1px solid var(--ht-border-light);
+  border-radius: 6px;
+}
+
+/* ===== 标签 ===== */
+.tag {
+  border: 1px solid var(--ht-border-light);
+  border-radius: 3px;
+  padding: 0.12em 0.5em;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  background-color: rgba(201, 160, 80, 0.10);
+  color: var(--ht-gold);
+}
+
+/* ===== 任务列表 ===== */
+.task-list-item-checkbox {
+  accent-color: var(--ht-navy-bright);
+}
+
+/* ===== 侧边栏 ===== */
+.side-dock-ribbon {
+  background-color: var(--ht-sidebar);
+}
+.nav-header {
+  color: var(--ht-gold);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.nav-folder-title,
+.nav-file-title {
+  color: #a8c8e8;
+}
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  background-color: var(--ht-hover);
+  color: #c8dff8;
+}
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background-color: var(--ht-active);
+  color: #d0e4ff;
+  font-weight: 600;
+  border-left: 2px solid var(--ht-gold);
+}
+.nav-folder.mod-root > .nav-folder-title {
+  color: var(--ht-gold-bright);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.nav-folder.mod-root > .nav-folder-title:hover {
+  color: var(--ht-gold-pale);
+}
+.nav-folder-collapse-indicator {
+  color: #7aa8d0;
+}
+
+/* ===== 滚动条 ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ht-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ht-border-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ht-navy);
+}
+
+/* ===== 状态栏 ===== */
+.status-bar {
+  background-color: var(--ht-sidebar);
+  color: var(--ht-text-dim);
+  border-top: 1px solid var(--ht-border);
+  font-weight: 500;
+  font-size: 0.85em;
+}
+
+/* ===== 高亮 ===== */
+.markdown-rendered mark,
+.cm-highlight {
+  background-color: var(--ht-highlight);
+  color: var(--ht-highlight-text);
+  font-weight: 600;
+}
+
+/* ===== 选中文本 ===== */
+::selection {
+  background-color: rgba(48, 120, 192, 0.35);
+  color: var(--ht-text-bright);
+}
+
+/* ===== 编辑行 ===== */
+.cm-s-obsidian .cm-active {
+  background-color: rgba(201, 160, 80, 0.04);
+}
+
+/* ===== Callout — 军工仪表板风格 ===== */
+.callout {
+  border-radius: 4px;
+  border-left-width: 3px;
+  background-color: var(--ht-card);
+}
+.callout-title {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ===== 搜索高亮 ===== */
+.search-result-file-matched-text {
+  background-color: rgba(201, 160, 80, 0.3);
+  color: var(--ht-gold-pale);
+}
+
+/* ===== Fig Callout — 图文并排批注 ===== */
+.callout[data-callout="fig"] {
+  --callout-color: 201, 160, 80;
+  background-color: var(--ht-card);
+  border: 1px solid var(--ht-border-light);
+  border-left: 3px solid var(--ht-gold);
+}
+.callout[data-callout="fig"] .callout-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.callout[data-callout="fig"] .callout-content > p:first-child img,
+.callout[data-callout="fig"] .callout-content > p:first-child .internal-embed {
+  margin: 0;
+}
+
+/* ===== 二级无序列表 — 空心圆圈 ===== */
+/* — 阅读模式 — */
+.markdown-reading-view ul ul > li::marker,
+.markdown-rendered    ul ul > li::marker { content: "○"; }
+
+/* — 实时预览 — */
+.markdown-source-view.mod-cm6 .HyperMD-list-line-2 .list-bullet::after {
+  background-color: transparent !important;
+  border: 1.5px solid var(--list-marker-color, var(--text-muted));
+}
+
+/* ===== Excalidraw 手写光标 → 圆点 ===== */
+.excalidraw .App,
+.excalidraw canvas,
+.excalidraw .excalidraw-canvas,
+.excalidraw [class*="canvas"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='3' cy='3' r='2.5' fill='%23e0b860'/%3E%3C/svg%3E") 3 3, crosshair !important;
+}
+
+/* ===== 标题栏 ===== */
+.titlebar .titlebar-text {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}

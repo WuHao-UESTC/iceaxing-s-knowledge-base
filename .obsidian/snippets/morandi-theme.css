@@ -1,0 +1,109 @@
+/* ===== Morandi Theme — 莫兰迪色系 ===== */
+
+:root {
+  --bg: #f3eee8;
+  --sidebar: #e9e3db;
+  --hover: #ddd6cc;
+  --active: #d4ccc0;
+  --rose: #c2a5a0;
+  --sage: #9baba3;
+  --slate: #8b95a8;
+  --text: #4a4442;
+  --secondary: #8a8480;
+  --heading: #5a5450;
+  --link: #8b8090;
+  --tag-bg: #e0d9d0;
+  --tag-color: #7a7268;
+  --code-bg: #ede7e0;
+  --border: #d9d2c8;
+  --highlight: #e8dcd0;
+}
+
+body {
+  --background-primary: var(--bg);
+  --background-primary-alt: var(--sidebar);
+  --background-secondary: var(--sidebar);
+  --background-secondary-alt: var(--hover);
+  --background-modifier-border: var(--border);
+  --background-modifier-hover: var(--hover);
+  --background-modifier-active-hover: var(--active);
+  --text-normal: var(--text);
+  --text-muted: var(--secondary);
+  --text-faint: #b0aaa4;
+  --text-accent: var(--link);
+  --text-accent-hover: #756a78;
+  --tag-background: var(--tag-bg);
+  --tag-color: var(--tag-color);
+  --code-background: var(--code-bg);
+  --interactive-accent: var(--rose);
+  --interactive-accent-hover: #b0938e;
+  --text-highlight-bg: var(--highlight);
+}
+
+.markdown-rendered h1, .cm-header-1 { color: var(--heading); font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+.markdown-rendered h2, .cm-header-2 { color: #6b6358; font-weight: 500; }
+.markdown-rendered h3, .cm-header-3 { color: #7a7268; font-weight: 500; }
+
+a.internal-link, .cm-hmd-internal-link { color: var(--link); }
+a.internal-link:hover, .cm-hmd-internal-link:hover { color: #6b6070; text-decoration: underline; }
+
+.cm-strong, strong { color: #5a4e46; }
+
+.markdown-rendered blockquote {
+  border-left: 3px solid var(--sage);
+  background-color: #ede7df;
+  color: #6b6360;
+}
+
+.markdown-rendered table { border-color: var(--border); }
+.markdown-rendered th { background-color: #e8e2d8; color: var(--heading); }
+.markdown-rendered tr:nth-child(even) { background-color: #f0ece5; }
+
+.cm-s-obsidian .cm-inline-code, .markdown-rendered code {
+  color: #7a7068; background-color: var(--code-bg); border-radius: 3px; padding: 0.1em 0.3em;
+}
+
+.tag { background-color: var(--tag-bg); border: none; border-radius: 4px; padding: 0.1em 0.5em; }
+.task-list-item-checkbox { accent-color: #b8afa4; }
+
+.side-dock-ribbon { background-color: var(--sidebar); }
+.nav-header { color: var(--heading); }
+.nav-file-title.is-active, .nav-folder-title.is-active { background-color: var(--active); color: var(--text); }
+.nav-folder.mod-root > .nav-folder-title { color: var(--heading); }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #c8c0b5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b0a89d; }
+
+.status-bar { background-color: var(--sidebar); color: var(--secondary); border-top: 1px solid var(--border); }
+.cm-s-obsidian .cm-active { background-color: rgba(196, 168, 160, 0.08); }
+
+/* ===== Fig Callout — 图文并排批注 ===== */
+.callout[data-callout="fig"] {
+  --callout-color: 194, 165, 160;
+  background-color: var(--sidebar);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--rose);
+}
+.callout[data-callout="fig"] .callout-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.callout[data-callout="fig"] .callout-content > p:first-child img,
+.callout[data-callout="fig"] .callout-content > p:first-child .internal-embed {
+  margin: 0;
+}
+
+/* ===== 二级无序列表 — 空心圆圈 ===== */
+/* — 阅读模式 — */
+.markdown-reading-view ul ul > li::marker,
+.markdown-rendered    ul ul > li::marker { content: "○"; }
+
+/* — 实时预览 — */
+.markdown-source-view.mod-cm6 .HyperMD-list-line-2 .list-bullet::after {
+  background-color: transparent !important;
+  border: 1.5px solid var(--list-marker-color, var(--text-muted));
+}

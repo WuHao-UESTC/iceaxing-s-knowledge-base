@@ -1,0 +1,12 @@
+{
+  "theme": "obsidian",
+  "cssTheme": "",
+  "baseFontSize": 17,
+  "translucency": false,
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "",
+  "enabledCssSnippets": [
+    "sea-of-fog-theme"
+  ]
+}

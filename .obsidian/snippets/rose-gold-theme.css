@@ -1,0 +1,168 @@
+/* ===== Rose Gold Luxe — 玫瑰金 · 华丽 ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  --rg-bg: #faf3ec;
+  --rg-sidebar: #f3e6da;
+  --rg-hover: #ecd8c4;
+  --rg-active: #e4ccb4;
+  --rg-rose: #c2786c;
+  --rg-champagne: #d4b896;
+  --rg-antique: #b8875e;
+  --rg-copper: #c08050;
+  --rg-wine: #83283a;
+  --rg-burgundy: #9b4050;
+  --rg-mauve: #b08898;
+  --rg-plum: #6e4e6a;
+  --rg-sage: #8a9c8a;
+  --rg-gold: #c9a470;
+  --rg-text: #362e28;
+  --rg-secondary: #8a7262;
+  --rg-faint: #b8a898;
+  --rg-code-bg: #f6ece0;
+  --rg-border: #e0ceb8;
+  --rg-highlight: #f2e0cc;
+  --rg-rose-light: #f0d8ce;
+  --rg-champagne-light: #f2e4d4;
+  --rg-wine-light: #f0d8dc;
+  --rg-mauve-light: #ece0e8;
+  --rg-sage-light: #e4ece4;
+  --rg-gold-light: #f4e8d8;
+}
+
+body {
+  --background-primary: var(--rg-bg);
+  --background-primary-alt: var(--rg-sidebar);
+  --background-secondary: var(--rg-sidebar);
+  --background-secondary-alt: var(--rg-hover);
+  --background-modifier-border: var(--rg-border);
+  --background-modifier-hover: var(--rg-hover);
+  --background-modifier-active-hover: var(--rg-active);
+  --text-normal: var(--rg-text);
+  --text-muted: var(--rg-secondary);
+  --text-faint: var(--rg-faint);
+  --text-accent: var(--rg-wine);
+  --text-accent-hover: #6a1e30;
+  --tag-background: var(--rg-rose-light);
+  --tag-color: #8b4a42;
+  --code-background: var(--rg-code-bg);
+  --interactive-accent: var(--rg-rose);
+  --interactive-accent-hover: #b0685a;
+  --text-highlight-bg: var(--rg-highlight);
+  --font-interface: "Merriweather", "Georgia", "STSong", "Noto Serif SC", "Songti SC", serif;
+  --font-text: "Merriweather", "Georgia", "STSong", "Noto Serif SC", "Songti SC", serif;
+  --font-monospace: "Cascadia Code", "JetBrains Mono", "IBM Plex Mono", "Consolas", monospace;
+}
+
+/* ===== 标题 — 从玫瑰金到香槟金的渐变深度 ===== */
+.markdown-rendered h1, .cm-header-1 {
+  color: #9b4a40;
+  font-weight: 700;
+  border-bottom: 2px solid var(--rg-champagne);
+  padding-bottom: 0.2em;
+}
+.markdown-rendered h2, .cm-header-2 { color: var(--rg-rose);     font-weight: 700; }
+.markdown-rendered h3, .cm-header-3 { color: var(--rg-antique);  font-weight: 600; }
+.markdown-rendered h4, .cm-header-4 { color: var(--rg-copper);   font-weight: 600; }
+.markdown-rendered h5, .cm-header-5 { color: var(--rg-burgundy); font-weight: 600; }
+.markdown-rendered h6, .cm-header-6 { color: var(--rg-sage);     font-weight: 500; }
+
+/* ===== 链接 — 红酒紫调 ===== */
+a.internal-link, .cm-hmd-internal-link { color: var(--rg-wine); font-weight: 500; }
+a.internal-link:hover, .cm-hmd-internal-link:hover { color: #5a1028; text-decoration: underline; }
+a.external-link { color: var(--rg-antique); font-weight: 500; }
+a.external-link:hover { color: #9b6838; }
+
+/* ===== 粗体/斜体 ===== */
+.cm-strong, strong { color: var(--rg-burgundy); font-weight: 700; }
+.cm-em, em { color: var(--rg-mauve); }
+
+/* ===== 引用块 ===== */
+.markdown-rendered blockquote {
+  border-left: 3px solid var(--rg-champagne);
+  background-color: #f8efe4;
+  color: #5a4840;
+}
+
+/* ===== 表格 ===== */
+.markdown-rendered table { border-color: var(--rg-border); }
+.markdown-rendered th {
+  background-color: #f0e4d4;
+  color: #6a4238;
+  font-weight: 700;
+}
+.markdown-rendered tr:nth-child(even) { background-color: #fcf6f0; }
+
+/* ===== 代码 ===== */
+.cm-s-obsidian .cm-inline-code,
+.markdown-rendered code {
+  color: #8b5850;
+  background-color: var(--rg-code-bg);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+/* ===== 标签 — 珠宝色盘 ===== */
+.tag[href*="type/skill"]  { background-color: var(--rg-rose-light);      color: #8b4a42; font-weight: 600; }
+.tag[href*="type/life"]   { background-color: var(--rg-gold-light);      color: #7a5a38; font-weight: 600; }
+.tag[href*="type/ramble"] { background-color: var(--rg-mauve-light);     color: #7a4870; font-weight: 600; }
+.tag[href*="status/idea"]      { background-color: var(--rg-champagne-light); color: #7a5830; font-weight: 600; }
+.tag[href*="status/draft"]     { background-color: var(--rg-rose-light);      color: #8b3a38; font-weight: 600; }
+.tag[href*="status/published"] { background-color: var(--rg-sage-light);      color: #3a6840; font-weight: 600; }
+.tag[href*="topic"]            { background-color: var(--rg-highlight);        color: #7a5838; font-weight: 500; }
+.tag[href*="moc"]              { background-color: #f0e0d0;                    color: #8b4a30; font-weight: 600; }
+.tag                           { border: none; border-radius: 5px; padding: 0.12em 0.5em; }
+
+/* ===== 任务列表 ===== */
+.task-list-item-checkbox { accent-color: var(--rg-rose); }
+
+/* ===== 侧边栏 ===== */
+.side-dock-ribbon { background-color: var(--rg-sidebar); }
+.nav-header { color: var(--rg-burgundy); font-weight: 700; }
+.nav-file-title.is-active, .nav-folder-title.is-active { background-color: var(--rg-active); }
+.nav-folder.mod-root > .nav-folder-title { color: #8b4a3a; font-weight: 700; }
+
+/* ===== 滚动条 ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--rg-bg); }
+::-webkit-scrollbar-thumb { background: #d4c0a8; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #c0a888; }
+
+/* ===== 状态栏 ===== */
+.status-bar { background-color: var(--rg-sidebar); color: var(--rg-secondary); border-top: 1px solid var(--rg-border); }
+
+/* ===== 高亮 ===== */
+.markdown-rendered mark, .cm-highlight { background-color: var(--rg-highlight); color: #6b3830; }
+
+/* ===== 编辑行 ===== */
+.cm-s-obsidian .cm-active { background-color: rgba(194, 120, 108, 0.06); }
+
+/* ===== Fig Callout — 图文并排批注 ===== */
+.callout[data-callout="fig"] {
+  --callout-color: 194, 120, 108;
+  background-color: var(--rg-sidebar);
+  border: 1px solid var(--rg-border);
+  border-left: 3px solid var(--rg-rose);
+}
+.callout[data-callout="fig"] .callout-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.callout[data-callout="fig"] .callout-content > p:first-child img,
+.callout[data-callout="fig"] .callout-content > p:first-child .internal-embed {
+  margin: 0;
+}
+
+/* ===== 二级无序列表 — 空心圆圈 ===== */
+/* — 阅读模式 — */
+.markdown-reading-view ul ul > li::marker,
+.markdown-rendered    ul ul > li::marker { content: "○"; }
+
+/* — 实时预览 — */
+.markdown-source-view.mod-cm6 .HyperMD-list-line-2 .list-bullet::after {
+  background-color: transparent !important;
+  border: 1.5px solid var(--list-marker-color, var(--text-muted));
+}

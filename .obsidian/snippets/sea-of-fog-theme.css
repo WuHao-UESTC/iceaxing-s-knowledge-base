@@ -1,0 +1,951 @@
+/* ===== Sea of Fog Theme — 雾海漫游 · 清冷空灵浅色主题 =====
+   灵感：卡斯帕·大卫·弗里德里希《雾海上的漫游者》
+   意境：高海拔的清冷、辽阔、通透与空灵，极强的呼吸感 */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* =========================== 色彩映射 ===========================
+   晨雾与天光 → 主背景   远山连绵 → 侧边栏
+   岩石与大衣 → 文字骨架   发上晨曦 → 点缀强调色
+   ============================================================ */
+
+:root {
+  /* --- 基础色 --- */
+  --sf-bg: #f2f5f7;               /* 晨雾珍珠白 — 微光蓝灰 */
+  --sf-sidebar: #e7ebef;          /* 远山轮廓 — 稍深冷灰 */
+  --sf-hover: #dde3e8;            /* hover — 雾中暗影 */
+  --sf-active: #d4dbe2;           /* active — 岩石阴影 */
+  --sf-text: #1c2228;             /* 岩石深炭 — 近景石色 */
+  --sf-secondary: #5c636a;        /* 山腰灰 — 次要文字 */
+  --sf-faint: #9aa0a8;            /* 远雾 — 淡文字 */
+  --sf-accent: #b08860;           /* 晨曦赭石金 — 温暖点缀 */
+  --sf-accent-hover: #8a6848;     /* 暗金 — hover */
+  --sf-accent-pale: #d4c0a8;      /* 淡金 — 浅色变体 */
+  --sf-accent-light: #f0e8e0;     /* 晨光金底 — 最浅 */
+  --sf-coat: #1c2722;             /* 墨绿色大衣 — 浓重撞色 */
+  --sf-coat-light: #2a3d34;       /* 稍浅墨绿 — hover */
+  --sf-coat-pale: #d8e3dd;        /* 墨绿浅底 — 背景 */
+  --sf-link: #8a6848;             /* 链接 — 赭石色 */
+  --sf-code-bg: #ebeff3;          /* 代码底 — 薄雾 */
+  --sf-border: #e3e6eb;           /* 雾灰边框 — 极淡 */
+  --sf-highlight: #f0e4d4;        /* 金色高亮 — 暖光 */
+  --sf-highlight-text: #5a4020;   /* 高亮文字 */
+
+  /* --- 分区背景（远山层次） --- */
+  --sf-left-sidebar-bg: #e4e8ed;
+  --sf-left-ribbon-bg: #dde2e8;
+  --sf-right-sidebar-bg: #e6eaef;
+  --sf-right-ribbon-bg: #dfe4ea;
+  --sf-titlebar-start: #f2f5f7;
+  --sf-titlebar-end: #e8ecf1;
+  --sf-statusbar-start: #edf0f5;
+  --sf-statusbar-end: #e5e9ef;
+
+  /* --- 交互色 --- */
+  --sf-modal-bg: #f6f8fa;
+  --sf-modal-border: #1c2722;      /* 墨绿色边框 */
+  --sf-input-focus-ring: rgba(176, 136, 96, 0.2);
+  --sf-selection: rgba(176, 136, 96, 0.18);
+  --sf-shadow: rgba(28, 34, 40, 0.04);
+  --sf-scrollbar-thumb: #cdd4db;
+  --sf-scrollbar-thumb-hover: #b8c0c8;
+  --sf-scrollbar-left: #c8d0d8;
+  --sf-scrollbar-right: #cad2da;
+}
+
+/* =========================== Obsidian 原生变量映射 =========================== */
+body {
+  --background-primary: var(--sf-bg);
+  --background-primary-alt: var(--sf-sidebar);
+  --background-secondary: var(--sf-sidebar);
+  --background-secondary-alt: var(--sf-hover);
+  --background-modifier-border: var(--sf-border);
+  --background-modifier-border-hover: #cdd4db;
+  --background-modifier-border-focus: #a89880;
+  --background-modifier-hover: var(--sf-hover);
+  --background-modifier-active-hover: var(--sf-active);
+  --background-modifier-error: rgba(180, 80, 60, 0.08);
+  --background-modifier-error-hover: rgba(180, 80, 60, 0.16);
+
+  --text-normal: var(--sf-text);
+  --text-muted: var(--sf-secondary);
+  --text-faint: var(--sf-faint);
+  --text-accent: var(--sf-accent);
+  --text-accent-hover: var(--sf-accent-hover);
+  --text-selection: var(--sf-selection);
+  --text-highlight-bg: var(--sf-highlight);
+  --text-on-accent: #e8ecea;
+
+  --code-background: var(--sf-code-bg);
+  --code-normal: var(--sf-coat-light);
+
+  --interactive-accent: var(--sf-coat);
+  --interactive-accent-hover: var(--sf-coat-light);
+  --interactive-accent-hsl: 160, 10%, 13%;
+  --interactive-accent-hover-hsl: 155, 12%, 20%;
+
+  --tag-background: var(--sf-accent-light);
+  --tag-color: #7a6038;
+
+  --font-interface: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-text: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+
+  --prompt-border: var(--sf-coat);
+  --checkbox-color: var(--sf-coat);
+  --checkbox-color-hover: var(--sf-coat-light);
+}
+
+/* =========================== 1. 标题 — 墨绿岩石与晨曦金光 =========================== */
+.markdown-rendered h1, .cm-header-1 {
+  font-family: 'Cormorant Garamond', 'PingFang SC', 'Noto Serif SC', serif;
+  color: var(--sf-text);
+  font-weight: 600;
+  font-size: 1.9em;
+  border-bottom: 2px solid var(--sf-coat);
+  padding-bottom: 0.2em;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+.markdown-rendered h2, .cm-header-2 {
+  font-family: 'Cormorant Garamond', 'PingFang SC', 'Noto Serif SC', serif;
+  color: var(--sf-coat);
+  font-weight: 700;
+  font-size: 1.5em;
+  font-style: italic;
+  border-left: 3px solid var(--sf-coat);
+  padding-left: 0.5em;
+  letter-spacing: 0.02em;
+}
+.markdown-rendered h3, .cm-header-3 {
+  font-family: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: var(--sf-accent);
+  font-weight: 600;
+  font-size: 1.25em;
+  letter-spacing: 0.04em;
+}
+.markdown-rendered h4, .cm-header-4 {
+  font-family: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #1e282d;
+  font-weight: 600;
+  font-size: 1.12em;
+  letter-spacing: 0.03em;
+}
+.markdown-rendered h5, .cm-header-5 {
+  font-family: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #2a363c;
+  font-weight: 500;
+  font-size: 1.05em;
+  letter-spacing: 0.02em;
+}
+.markdown-rendered h6, .cm-header-6 {
+  font-family: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #4a5860;
+  font-weight: 500;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* =========================== 2. 链接 — 晨曦赭石暖色 =========================== */
+a.internal-link, .cm-hmd-internal-link {
+  color: var(--sf-link);
+  font-weight: 500;
+  text-decoration: none;
+}
+a.internal-link:hover, .cm-hmd-internal-link:hover {
+  color: var(--sf-accent);
+  text-decoration: underline solid var(--sf-accent-pale);
+  text-underline-offset: 3px;
+}
+a.external-link { color: #6a8090; font-weight: 500; }
+a.external-link:hover { color: #4a6070; }
+
+/* =========================== 3. 粗体 / 斜体 =========================== */
+strong { color: var(--sf-accent); font-weight: 700; }
+em { color: #3a4550; font-weight: 500; font-style: italic; }
+
+/* =========================== 4. 引用块 — 雾中山影 =========================== */
+.markdown-rendered blockquote {
+  border-left: 3px solid var(--sf-coat);
+  background-color: rgba(28, 39, 34, 0.03);
+  color: #3a4a44;
+  font-style: italic;
+  padding: 0.8em 1.2em;
+  margin: 1.5em 0;
+}
+
+/* =========================== 5. 表格 — 山岩断面 =========================== */
+.markdown-rendered table { border-color: var(--sf-border); }
+.markdown-rendered th {
+  background-color: var(--sf-coat-pale);
+  color: var(--sf-coat);
+  font-weight: 600;
+  font-family: 'Josefin Sans', 'PingFang SC', sans-serif;
+  font-size: 0.9em;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--sf-coat);
+}
+.markdown-rendered tr:nth-child(even) { background-color: rgba(235, 238, 242, 0.5); }
+.markdown-rendered td { border-color: var(--sf-border); }
+
+/* =========================== 6. 行内代码 =========================== */
+.cm-s-obsidian .cm-inline-code, .markdown-rendered code {
+  color: var(--sf-coat-light);
+  background-color: var(--sf-coat-pale);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+/* =========================== 7. 代码块 =========================== */
+.markdown-rendered pre {
+  background-color: var(--sf-code-bg);
+  border: 1px solid var(--sf-border);
+  border-radius: 6px;
+  padding: 1em;
+}
+.markdown-source-view .cm-s-obsidian .HyperMD-codeblock {
+  background-color: var(--sf-code-bg);
+}
+.markdown-rendered pre code {
+  color: var(--sf-text);
+  font-weight: 400;
+}
+
+/* =========================== 8. 标签 — 薄雾金底 =========================== */
+.tag {
+  border: none;
+  border-radius: 4px;
+  padding: 0.12em 0.5em;
+  font-weight: 500;
+  font-size: 0.8em;
+  letter-spacing: 0.02em;
+  background-color: var(--sf-accent-light);
+  color: #7a6038;
+  transition: background-color 0.15s ease;
+}
+.tag:hover {
+  background-color: #e8dcc8;
+}
+.tag[href*="type"]  { background-color: #e8e4df; color: #5a5040; }
+.tag[href*="status"] { background-color: var(--sf-accent-light); color: #6a5030; }
+.tag[href*="moc"]   { background-color: #e2dcd4; color: #5a4020; font-weight: 600; }
+
+/* =========================== 9. 分割线 — 山脊线 =========================== */
+.markdown-rendered hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--sf-coat-pale), var(--sf-coat), var(--sf-coat-pale), transparent);
+  margin: 2.5em 0;
+}
+.cm-s-obsidian .cm-hr {
+  color: var(--sf-accent-pale) !important;
+}
+
+/* =========================== 10. 高亮 / 选中 =========================== */
+.markdown-rendered mark, .cm-highlight {
+  background-color: var(--sf-highlight);
+  color: var(--sf-highlight-text);
+  font-weight: 500;
+}
+::selection {
+  background-color: rgba(176, 136, 96, 0.22);
+  color: var(--sf-text);
+}
+
+/* =========================== 11. Callout — 雾中注记 =========================== */
+.callout {
+  border-radius: 6px;
+  border-left-width: 3px;
+  border-left-color: var(--sf-coat);
+  background-color: rgba(216, 227, 221, 0.3);
+  border: 1px solid var(--sf-border);
+}
+.callout-title {
+  font-family: 'Josefin Sans', 'PingFang SC', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--sf-coat);
+}
+.callout[data-callout="fig"] {
+  --callout-color: 28, 39, 34;
+  background-color: rgba(216, 227, 221, 0.3);
+  border: 1px solid var(--sf-border);
+  border-left: 3px solid var(--sf-coat);
+}
+.callout[data-callout="fig"] .callout-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.callout[data-callout="fig"] .callout-content > p:first-child img,
+.callout[data-callout="fig"] .callout-content > p:first-child .internal-embed {
+  margin: 0;
+}
+
+/* ===== 二级无序列表 — 空心圆圈 ===== */
+/* — 阅读模式 — */
+.markdown-reading-view ul ul > li::marker,
+.markdown-rendered    ul ul > li::marker { content: "○"; }
+
+/* — 实时预览 — */
+.markdown-source-view.mod-cm6 .HyperMD-list-line-2 .list-bullet::after {
+  background-color: transparent !important;
+  border: 1.5px solid var(--list-marker-color, var(--text-muted));
+}
+
+/* =========================== 12. 任务列表 =========================== */
+.task-list-item-checkbox {
+  accent-color: var(--sf-coat);
+  border-radius: 3px;
+}
+input[type="checkbox"]:checked {
+  filter: drop-shadow(0 0 1px rgba(176, 136, 96, 0.4));
+}
+
+/* =========================== 13. 搜索高亮 =========================== */
+.search-result-file-matched-text {
+  background-color: var(--sf-highlight);
+  color: var(--sf-highlight-text);
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.search-result-hover-button:hover {
+  color: var(--sf-coat);
+}
+
+/* =========================== 14. 活动行 =========================== */
+.cm-s-obsidian .cm-active {
+  background-color: rgba(176, 136, 96, 0.04);
+}
+
+/* =========================== 15. 左侧边栏 — 近山阴影 =========================== */
+.mod-left-split {
+  background-color: var(--sf-left-sidebar-bg);
+}
+
+/* 左侧 Ribbon */
+.side-dock-ribbon.mod-left {
+  background-color: var(--sf-left-ribbon-bg);
+}
+.side-dock-ribbon-action {
+  color: #7a8590;
+}
+.side-dock-ribbon-action:hover {
+  background-color: var(--sf-active);
+  color: var(--sf-coat);
+}
+
+/* 导航头 */
+.nav-header {
+  color: var(--sf-secondary);
+  font-family: 'Josefin Sans', 'PingFang SC', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.nav-header .nav-action-button {
+  color: #8a95a0;
+}
+.nav-header .nav-action-button:hover {
+  color: var(--sf-coat);
+  background-color: var(--sf-coat-pale);
+}
+
+/* 文件夹标题 */
+.nav-folder-title {
+  color: #5a626a;
+  font-weight: 400;
+}
+.nav-folder-title:hover {
+  background-color: var(--sf-hover);
+  color: var(--sf-text);
+}
+.nav-folder-title.is-active {
+  background-color: var(--sf-active);
+  color: var(--sf-text);
+  font-weight: 500;
+  border-left: 2px solid var(--sf-coat);
+}
+.nav-folder.mod-root > .nav-folder-title {
+  color: var(--sf-text);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.nav-folder.mod-root > .nav-folder-title:hover {
+  color: var(--sf-coat);
+}
+
+/* 文件标题 */
+.nav-file-title {
+  color: #5a626a;
+}
+.nav-file-title:hover {
+  background-color: var(--sf-hover);
+  color: var(--sf-text);
+}
+.nav-file-title.is-active {
+  background-color: var(--sf-active);
+  color: var(--sf-text);
+  font-weight: 500;
+  border-left: 2px solid var(--sf-coat);
+}
+
+/* 折叠指示器 */
+.nav-folder-collapse-indicator {
+  color: #a0a8b0;
+}
+.nav-folder-collapse-indicator:hover {
+  color: var(--sf-coat);
+}
+
+/* 拖放占位 */
+.nav-folder-title.is-being-dragged-over,
+.nav-file-title.is-being-dragged-over {
+  background-color: var(--sf-hover);
+  border: 2px dashed var(--sf-accent-pale);
+  border-radius: 4px;
+}
+
+/* =========================== 16. 右侧边栏 — 远山淡影 =========================== */
+.mod-right-split {
+  background-color: var(--sf-right-sidebar-bg);
+}
+
+/* 右侧 Ribbon */
+.side-dock-ribbon.mod-right {
+  background-color: var(--sf-right-ribbon-bg);
+}
+
+/* 右侧面板 */
+.workspace-leaf-content[data-type="backlink"] .view-content,
+.workspace-leaf-content[data-type="outline"] .view-content,
+.workspace-leaf-content[data-type="tag"] .view-content {
+  background-color: var(--sf-right-sidebar-bg);
+}
+
+/* 树状列表项 */
+.tree-item-self {
+  color: var(--sf-text);
+}
+.tree-item-self:hover {
+  background-color: var(--sf-hover);
+}
+.tree-item-self.is-clickable:hover {
+  color: var(--sf-accent);
+}
+
+/* 大纲与反向链接 */
+.backlink-pane .tree-item-inner,
+.outgoing-link-pane .tree-item-inner {
+  color: var(--sf-text);
+}
+.backlink-pane .search-result-file-title,
+.outgoing-link-pane .search-result-file-title {
+  color: #4a5560;
+  font-weight: 600;
+}
+
+/* =========================== 17. 标签页 =========================== */
+.workspace-tab-header {
+  color: var(--sf-secondary);
+  font-weight: 400;
+}
+.workspace-tab-header:hover {
+  color: var(--sf-text);
+  background-color: var(--sf-hover);
+}
+.workspace-tab-header.is-active {
+  color: var(--sf-coat);
+  font-weight: 600;
+  background-color: var(--sf-bg);
+  box-shadow: inset 0 -2px 0 var(--sf-coat);
+}
+.workspace-tab-header-inner-icon {
+  color: #8a95a0;
+}
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--sf-coat);
+}
+
+/* 堆叠标签 */
+.workspace-tabs.mod-stacked .workspace-tab-header {
+  border-bottom: 1px solid var(--sf-border);
+}
+
+/* =========================== 18. 视图头 =========================== */
+.view-header {
+  background-color: var(--sf-sidebar);
+  border-bottom: 1px solid var(--sf-border);
+}
+.view-header-title {
+  color: var(--sf-text);
+  font-weight: 500;
+}
+.view-header-title:hover {
+  color: var(--sf-coat);
+}
+.view-action {
+  color: var(--sf-faint);
+}
+.view-action:hover {
+  color: var(--sf-coat);
+  background-color: var(--sf-hover);
+}
+
+/* =========================== 19. 标题栏 — 薄雾渐变 =========================== */
+.titlebar {
+  background: linear-gradient(180deg, var(--sf-titlebar-start), var(--sf-titlebar-end));
+  border-bottom: 1px solid var(--sf-border);
+}
+.titlebar .titlebar-text {
+  font-family: 'Josefin Sans', 'PingFang SC', sans-serif;
+  font-weight: 500;
+  color: var(--sf-secondary);
+  letter-spacing: 0.06em;
+}
+.titlebar-button {
+  color: #9aa0a8;
+}
+.titlebar-button:hover {
+  background-color: var(--sf-hover);
+  color: var(--sf-text);
+}
+.titlebar-button.mod-close:hover {
+  background-color: #c07060;
+  color: white;
+}
+
+/* =========================== 20. 滚动条 — 岩灰色 =========================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--sf-scrollbar-thumb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sf-scrollbar-thumb-hover);
+}
+.mod-left-split ::-webkit-scrollbar-thumb {
+  background: var(--sf-scrollbar-left);
+}
+.mod-right-split ::-webkit-scrollbar-thumb {
+  background: var(--sf-scrollbar-right);
+}
+
+/* =========================== 21. 状态栏 — 天光渐变 =========================== */
+.status-bar {
+  background: linear-gradient(90deg, var(--sf-statusbar-start), var(--sf-statusbar-end));
+  color: var(--sf-faint);
+  border-top: 1px solid var(--sf-border);
+  font-weight: 400;
+  font-size: 0.85em;
+}
+.status-bar-item {
+  font-weight: 500;
+}
+.status-bar-item:hover {
+  color: var(--sf-coat);
+}
+.status-bar-item.mod-clickable:hover {
+  color: var(--sf-coat-light);
+}
+
+/* =========================== 22. 模态框 =========================== */
+.modal {
+  background-color: var(--sf-modal-bg);
+  border: 2px solid var(--sf-coat);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px var(--sf-shadow);
+}
+.modal .modal-title {
+  font-family: 'Josefin Sans', 'PingFang SC', sans-serif;
+  font-weight: 600;
+  color: var(--sf-text);
+  letter-spacing: 0.03em;
+}
+.modal-close-button {
+  color: var(--sf-faint);
+}
+.modal-close-button:hover {
+  background-color: var(--sf-hover);
+  color: var(--sf-text);
+}
+
+/* =========================== 23. 设置面板 =========================== */
+.vertical-tab-header {
+  background-color: var(--sf-left-sidebar-bg);
+}
+.vertical-tab-nav-item {
+  font-weight: 400;
+  color: var(--sf-secondary);
+}
+.vertical-tab-nav-item:hover {
+  color: var(--sf-text);
+  background-color: var(--sf-hover);
+}
+.vertical-tab-nav-item.is-active {
+  color: var(--sf-coat);
+  font-weight: 600;
+  background-color: var(--sf-active);
+  border-left: 2px solid var(--sf-coat);
+}
+.setting-item-name {
+  color: var(--sf-text);
+  font-weight: 500;
+}
+.setting-item-description {
+  color: var(--sf-secondary);
+}
+
+/* =========================== 24. 输入框 / 文本域 =========================== */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+  border: 1px solid var(--sf-border);
+  border-radius: 4px;
+  background-color: var(--sf-bg);
+  color: var(--sf-text);
+}
+input:focus,
+textarea:focus {
+  border-color: var(--sf-accent-pale);
+  box-shadow: 0 0 0 2px var(--sf-input-focus-ring);
+  outline: none;
+}
+select, .dropdown {
+  border: 1px solid var(--sf-border);
+  border-radius: 4px;
+  background-color: var(--sf-bg);
+  color: var(--sf-text);
+}
+
+/* =========================== 25. 按钮 =========================== */
+button:not(.clickable-icon) {
+  background-color: var(--sf-coat);
+  color: #e8ecea;
+  font-family: 'Inter', 'PingFang SC', sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4em 1em;
+  cursor: pointer;
+}
+button:not(.clickable-icon):hover {
+  background-color: var(--sf-coat-light);
+}
+button.mod-cta {
+  background-color: var(--sf-accent);
+}
+button.mod-cta:hover {
+  background-color: var(--sf-accent-hover);
+}
+button.mod-warning {
+  background-color: #a07050;
+}
+button.mod-warning:hover {
+  background-color: #8a6040;
+}
+button.mod-destructive {
+  background-color: #b06050;
+}
+button.mod-destructive:hover {
+  background-color: #904030;
+}
+
+/* 开关 */
+.checkbox-container.is-enabled {
+  background-color: var(--sf-coat);
+}
+.checkbox-container:hover {
+  background-color: var(--sf-coat-light);
+}
+
+/* =========================== 26. 菜单 & 命令面板 =========================== */
+.menu,
+.suggestion-container {
+  background-color: var(--sf-bg);
+  border: 1px solid var(--sf-border);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px var(--sf-shadow);
+}
+.menu-item {
+  font-weight: 400;
+  color: var(--sf-secondary);
+}
+.menu-item:hover,
+.suggestion-item:hover {
+  background-color: var(--sf-hover);
+  color: var(--sf-text);
+}
+.menu-item.is-selected,
+.suggestion-item.is-selected {
+  background-color: var(--sf-accent-light);
+  color: #5a4020;
+  font-weight: 500;
+}
+.menu-separator {
+  border-color: var(--sf-border);
+}
+.prompt {
+  background-color: var(--sf-bg);
+  border: 1px solid var(--sf-border);
+}
+.prompt .suggestion-item.mod-group {
+  color: var(--sf-accent);
+  font-weight: 600;
+  font-family: 'Josefin Sans', 'PingFang SC', sans-serif;
+}
+.prompt-results .suggestion-item {
+  border-radius: 3px;
+}
+
+/* =========================== 27. 通知 / Toast =========================== */
+.notice {
+  background-color: var(--sf-sidebar);
+  color: var(--sf-text);
+  border: 1px solid var(--sf-border);
+  border-radius: 6px;
+  font-weight: 400;
+  box-shadow: 0 4px 12px var(--sf-shadow);
+}
+.notice-container .notice:nth-child(odd) { border-left: 2px solid var(--sf-accent-pale); }
+.notice-container .notice:nth-child(even) { border-left: 2px solid #a0aab4; }
+
+/* =========================== 28. 工具提示 =========================== */
+.tooltip {
+  background-color: var(--sf-sidebar);
+  color: var(--sf-text);
+  border: 1px solid var(--sf-border);
+  border-radius: 4px;
+  font-weight: 400;
+  box-shadow: 0 4px 12px var(--sf-shadow);
+}
+
+/* =========================== 29. 关系图谱 — 远山散布 =========================== */
+.graph-view.color-fill {
+  color: #b0b8c0;
+}
+.graph-view.color-fill-focused {
+  color: var(--sf-coat);
+}
+.graph-view.color-fill-unresolved {
+  color: #c8b8a8;
+}
+.graph-view.color-fill-tag {
+  color: #a0a8b0;
+}
+.graph-view.color-fill-attachment {
+  color: #8a95a0;
+}
+.graph-view.color-line {
+  color: #d8dce2;
+}
+.graph-view.color-line-highlight {
+  color: var(--sf-coat);
+}
+.graph-view.color-arrow {
+  color: #b0b8c0;
+}
+.graph-view.color-circle {
+  color: var(--sf-accent-pale);
+}
+.graph-view.color-text {
+  color: var(--sf-text);
+}
+.graph-controls {
+  background-color: var(--sf-left-sidebar-bg);
+  border: 1px solid var(--sf-border);
+  border-radius: 6px;
+}
+.graph-controls-button.mod-close {
+  color: var(--sf-faint);
+}
+
+/* =========================== 30. Excalidraw — 赭石色光标 =========================== */
+.excalidraw .App,
+.excalidraw canvas,
+.excalidraw .excalidraw-canvas,
+.excalidraw [class*="canvas"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='3' cy='3' r='2.5' fill='%23b08860'/%3E%3C/svg%3E") 3 3, crosshair !important;
+}
+
+/* =========================== 31. 移动端 =========================== */
+.is-mobile .mobile-toolbar {
+  background-color: var(--sf-sidebar);
+  border-top: 1px solid var(--sf-border);
+}
+.is-mobile .mobile-toolbar-option {
+  color: var(--sf-secondary);
+}
+.is-phone .workspace-tabs .view-header {
+  background-color: var(--sf-bg);
+}
+
+/* =========================== 32. 启动进度条 =========================== */
+.progress-bar {
+  background-color: var(--sf-accent-light);
+}
+.progress-bar .progress-bar-inner {
+  background: linear-gradient(90deg, var(--sf-coat), #2a4036, var(--sf-accent));
+}
+.progress-bar-sub {
+  color: var(--sf-secondary);
+  font-weight: 400;
+}
+
+/* =========================== 33. 细节补充 =========================== */
+/* 缩进线 — 极淡雾影 */
+.cm-indent::before {
+  border-right: 1px solid #e8ebef;
+}
+
+/* 活动行行号 */
+.markdown-source-view .cm-active .cm-lineNumbers .cm-gutterElement {
+  color: var(--sf-accent);
+  font-weight: 600;
+}
+
+/* 内联标题 */
+.inline-title {
+  color: var(--sf-text);
+  font-weight: 600;
+  font-family: 'Josefin Sans', 'PingFang SC', sans-serif;
+}
+
+/* 元数据 / Properties */
+.metadata-property-key {
+  color: #5a626a;
+  font-weight: 500;
+}
+.metadata-property-value {
+  color: var(--sf-text);
+}
+
+/* Canvas 节点 */
+.canvas-node-container {
+  border: 1px solid var(--sf-border);
+  background-color: var(--sf-bg);
+  border-radius: 4px;
+}
+.canvas-node-container:hover {
+  border-color: var(--sf-coat);
+}
+
+/* 社区插件卡片 */
+.community-item {
+  border: 1px solid var(--sf-border);
+  border-radius: 6px;
+  background-color: var(--sf-bg);
+}
+.community-item:hover {
+  border-color: var(--sf-accent-pale);
+  background-color: var(--sf-accent-light);
+}
+.community-item .flair {
+  background-color: var(--sf-accent-light);
+  color: var(--sf-accent-hover);
+  font-weight: 500;
+}
+
+/* 面板分隔线 — 极弱 */
+.workspace-split.mod-vertical > .workspace-leaf {
+  border-right: 1px solid var(--sf-border);
+}
+
+/* 空状态提示 */
+.empty-state-title {
+  color: var(--sf-secondary);
+  font-weight: 600;
+}
+.empty-state-action {
+  color: var(--sf-accent);
+}
+.empty-state-action:hover {
+  color: var(--sf-accent-hover);
+}
+
+/* 文件浏览器拖放区域高亮 */
+.nav-folder.mod-drop-target,
+.nav-file.mod-drop-target {
+  background-color: var(--sf-active);
+}
+
+/* =========================== 34. 编辑模式与阅读模式样式对齐 =========================== */
+/* 格式化标记：** __ == 等 — 淡雾灰色，不干扰阅读 */
+.cm-formatting-strong,
+.cm-formatting-em {
+  color: var(--sf-faint);
+  font-weight: 400;
+}
+/* 编辑模式粗体 = 阅读模式粗体 */
+.cm-strong {
+  color: var(--sf-accent);
+  font-weight: 700;
+}
+/* 编辑模式斜体 = 阅读模式斜体 */
+.cm-em {
+  color: #3a4550;
+  font-weight: 500;
+  font-style: italic;
+}
+/* 编辑模式高亮 */
+.cm-s-obsidian span.cm-formatting-highlight {
+  color: var(--sf-faint);
+  background-color: transparent;
+}
+.cm-s-obsidian span.cm-highlight {
+  background-color: var(--sf-highlight);
+  color: var(--sf-highlight-text);
+}
+/* 编辑模式删除线 */
+.cm-strikethrough {
+  color: var(--sf-faint);
+  text-decoration: line-through;
+}
+/* 编辑模式行内代码 */
+.cm-s-obsidian .cm-inline-code {
+  color: var(--sf-coat-light);
+  background-color: var(--sf-coat-pale);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+/* 编辑模式链接 */
+.cm-hmd-internal-link {
+  color: var(--sf-link);
+  font-weight: 500;
+}
+.cm-hmd-internal-link:hover {
+  color: var(--sf-accent);
+}
+/* 编辑模式引用块 */
+.HyperMD-quote {
+  background-color: rgba(28, 39, 34, 0.03);
+  border-left: 3px solid var(--sf-coat);
+  color: #3a4a44;
+  font-style: italic;
+}
+
+/* 搜索替换高亮标记 */
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: var(--sf-highlight);
+}
+
+/* 行高与段落间距 — 雾海的呼吸感 */
+.markdown-rendered p {
+  line-height: 1.85;
+  margin-bottom: 1.2em;
+}
+.markdown-source-view .cm-line {
+  line-height: 1.85;
+}
