@@ -28,12 +28,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Magneticelectro Theory/Hayt-工程电磁场/C10-传输线.md",
+                "file": "2026嵌赛/FPGA双模式便携合成器项目规划书.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C10-传输线"
+              "title": "FPGA双模式便携合成器项目规划书"
             }
           }
         ],
@@ -230,9 +230,14 @@
   },
   "active": "88137b61892887eb",
   "lastOpenFiles": [
-    "System/Attachments/Pasted image 20260903150556.png",
+    "IC/Razavi-模拟CMOS集成电路设计/C6.放大器频率响应.md",
+    "IC/Razavi-模拟CMOS集成电路设计/C7放大器噪声.md",
+    "IC/Razavi-模拟CMOS集成电路设计/C8.反馈.md",
     "2026英才科协发展规划/整体规划.md",
     "竞赛文档/2026 CICC/FDA设计文档.md",
+    "竞赛文档/2026电赛培训/2026.7.9 如何设计一个电路模块.md",
+    "Magneticelectro Theory/Hayt-工程电磁场/C10-传输线.md",
+    "System/Attachments/Pasted image 20260903150556.png",
     "竞赛文档/2026 CICC",
     "2026嵌赛/FPGA双模式便携合成器项目规划书.md",
     "2026嵌赛/讨论.md",
@@ -266,12 +271,7 @@
     "System/Attachments/Pasted image 20260831112618.png",
     "System/Attachments/Pasted image 20260831112357.png",
     "System/Attachments/Pasted image 20260831112134.png",
-    "System/Attachments/Pasted image 20260831112002.png",
-    "IC/Razavi-模拟CMOS集成电路设计/C7放大器噪声.md",
     "IC/Razavi-模拟CMOS集成电路设计/C10.稳定性与频率补偿.md",
-    "IC/Razavi-模拟CMOS集成电路设计/C17.短沟道效应与器件模型.md",
-    "IC/Razavi-模拟CMOS集成电路设计/C11.纳米器件设计与运放实例.md",
-    "IC/Razavi-模拟CMOS集成电路设计/C18.CMOS工艺技术.md",
     "Magneticelectro Theory/知识导图.md~RF5c69574.TMP",
     "Magneticelectro Theory/知识导图.md~RF5b63716.TMP",
     "IC/Ludwig-RF Circuit Design/C2-传输线理论.md.tmp.14840.83d67ef83533",
