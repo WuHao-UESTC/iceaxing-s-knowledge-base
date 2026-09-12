@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/iceaxing/OneDrive/Desktop/**)",
+      "Bash(python -c \"from pypdf import PdfReader; r = PdfReader\\('FPGA双模式便携合成器项目规划书.pdf'\\); print\\('pages:', len\\(r.pages\\)\\)\")",
+      "Bash(mineru-open-api --version)",
+      "Bash(mineru-open-api extract *)",
+      "Bash(mineru-open-api auth *)"
+    ]
+  }
+}

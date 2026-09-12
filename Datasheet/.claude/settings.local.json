@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\Datasheet\" -Filter \"*.md\")",
+      "Bash(Select-Object FullName, Length)",
+      "Bash(python translate.py)",
+      "Bash(python translate_final.py)",
+      "Bash(python translate_batch3.py)"
+    ]
+  }
+}

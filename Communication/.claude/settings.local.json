@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "PowerShell(\\(Get-Content \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\Communication\\\\知识导图.md\" -Encoding UTF8\\).Length)",
+      "Bash(sed -i '261s/sum a_k H\\(jkomega_0\\)/\\\\\\\\sum a_k H\\(jk\\\\\\\\\\\\\\\\omega_0\\)/' 知识导图.md)",
+      "Bash(sed -i '261s/jkomega_0 t/jk\\\\\\\\\\\\\\\\omega_0 t/' 知识导图.md)",
+      "Bash(sed -i '263s/1+RCjomega/1+RCj\\\\\\\\\\\\\\\\omega/' 知识导图.md)"
+    ]
+  }
+}
