@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\IC\" -Recurse -Depth 0)",
+      "Bash(Select-Object FullName, Mode, Length)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(Get-ChildItem -Path \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\IC\" -Recurse -Depth 3 -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\IC\" -Recurse -Depth 0 -Filter \"*CLAUDE*\" -ErrorAction SilentlyContinue)",
+      "Bash(Get-ChildItem -Path \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\" -Depth 0 -Filter \"*CLAUDE*\" -ErrorAction SilentlyContinue)",
+      "Bash(grep -nE \"^#{1,4} \")",
+      "Bash(bash _merge.sh)",
+      "Bash(bash _fix_merged.sh)",
+      "Bash(python3)",
+      "Bash(python3 \"/e/base_Obsidian/iceaxing's knowledge base/Magneticelectro Theory/_fix_merge2.py\")",
+      "Bash(/c/Users/iceaxing/AppData/Local/Programs/Python/Python312/python *)"
+    ]
+  }
+}

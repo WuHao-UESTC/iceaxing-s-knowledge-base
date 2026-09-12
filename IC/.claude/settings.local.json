@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(iconv -f UTF-8 -t CP1252 \"E:/base_Obsidian/iceaxing's knowledge base/Analog IC/单级放大器.md\")",
+      "Bash(iconv -f UTF-8 -t UTF-8)",
+      "PowerShell(\\(Get-Content \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\Analog IC\\\\单级放大器.md\"\\).Length)",
+      "PowerShell(Move-Item *)",
+      "Bash(python3 *)",
+      "PowerShell($json = Get-Content -Path \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\Analog IC\\\\知识导图.canvas\" -Raw -Encoding UTF8 | ConvertFrom-Json; Write-Host \"nodes: $\\($json.nodes.Count\\)\"; Write-Host \"edges: $\\($json.edges.Count\\)\"; Write-Host \"Valid JSON\")",
+      "PowerShell($json = Get-Content -Path \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\Analog IC\\\\知识导图.canvas\" -Raw -Encoding UTF8 | ConvertFrom-Json; Write-Host \"nodes: $\\($json.nodes.Count\\), edges: $\\($json.edges.Count\\), Valid JSON\")",
+      "PowerShell(Rename-Item *)",
+      "Bash(cmd.exe *)",
+      "PowerShell(Robocopy \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\Analog IC\" \"E:\\\\base_Obsidian\\\\iceaxing's knowledge base\\\\IC\" /E /COPY:DAT /R:1 /W:1 /NP /NFL /NDL)",
+      "Bash(wc *)",
+      "Bash(grep -n \"^## \\\\|^# \" \"E:\\\\\\\\study_Analog IC\\\\\\\\ai-reading\\\\\\\\模集-拉扎维\\\\\\\\textbook-md-MinerU\\\\\\\\pages_001-200.md\")",
+      "Bash(grep -n \"^## \\\\|^# \" \"E:\\\\\\\\study_Analog IC\\\\\\\\ai-reading\\\\\\\\模集-拉扎维\\\\\\\\textbook-md-MinerU\\\\\\\\pages_201-400.md\")",
+      "Read(//e/study_Analog IC/ai-reading/**)",
+      "Read(//e/study_Analog IC/**)",
+      "Bash(dir E:\\\\study_Analog IC\\\\ai-reading\\\\\" 2>nul || echo Path *)",
+      "PowerShell(New-Item *)"
+    ]
+  }
+}
