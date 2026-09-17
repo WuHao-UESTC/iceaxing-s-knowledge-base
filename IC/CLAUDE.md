@@ -229,7 +229,7 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：辅助教材——需对照原书阅读，不替代原书。以物理直觉为引导、数学推导为定量支撑。
 
-**教材位置**：`E:\study_Analog IC\ai-reading\模集\textbook-md-MinerU\`
+**教材位置**：`E:\_textbook-md\模集-拉扎维\textbook-md-MinerU\`
 
 教材由 4 个 markdown 文件组成，覆盖原书第 1–801 页：
 - `pages_001-200.md`
@@ -261,10 +261,10 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重概念的物理背景和设计动机——每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。推导深度与模拟 CMOS 教材一致：关键结论详细解释，推导过程仅写关键步骤与思想方法，不展开全部代数。
 
-**教材位置**：`E:\study_Analog IC\ai-reading\RF Microelectronics-拉扎维\textbook\`
+**教材位置**：`E:\_textbook-md\RF Microelectronics-拉扎维\textbook\`
 
 教材为单个 markdown 文件：
-- `RF-Microelectronics-Razavi-2nd.md`
+- `RF_Microelectronics.md`
 
 配套图片位于 `images/` 文件夹。
 
@@ -296,7 +296,7 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重概念的物理背景和设计动机——每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。推导深度与其他教材一致：关键结论详细解释，推导过程仅写关键步骤与思想方法，不展开全部代数。
 
-**教材位置**：`E:\study_Analog IC\ai-reading\RF Circuit Design-Theory and Applications\`
+**教材位置**：`E:\_textbook-md\RF Circuit Design-Theory and Applications\`
 
 教材为单个 markdown 文件：
 - `RF_Circuit_Design_Theory_and_Applications.md`
@@ -336,7 +336,7 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重工艺的物理/化学机理与动机——每个新工艺交代"为什么需要它"、给出量级感（温度、膜厚、掺杂浓度、气压等）、充分展开例子。机理深度与其他教材一致：关键机理详细解释，定量关系仅写关键公式与思想方法，不展开全部代数。
 
-**教材位置**：`E:\study_微电子工艺与封装\`
+**教材位置**：`E:\_textbook-md\半导体制造技术\`
 
 教材为单个 markdown 文件（UTF-8 编码）：
 - `半导体制造技术.md`（约 1.4 MB，14,134 行）
@@ -373,7 +373,12 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **教材特点**：Sansen 以设计方法论为核心，强调 gm/Id 设计空间探索、设计方程和 sizing 策略。笔记风格应偏向设计导向——设计参数如何选取、折中如何量化、设计流程如何组织。
 
-**教材位置**：（待提供）
+**教材位置**：`E:\_textbook-md\精粹-Sansen\textbook-md\`
+
+教材为单个 markdown 文件：
+- `Analog_Design_Essentials_Sansen.md`
+
+配套图片位于 `images/` 文件夹。
 
 **章节组织**：（待用户规划）
 
@@ -387,7 +392,12 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **教材特点**：ADC 专项——精度/失配/动态性能为主线，系统级架构（SAR / ΣΔ / Pipeline）。笔记风格应偏向精度分析和系统级设计折中。
 
-**教材位置**：（待提供）
+**教材位置**：`E:\_textbook-md\ADC-Plegrom\textbook-md\`
+
+教材为单个 markdown 文件：
+- `Analog-to-Digital Conversion.md`
+
+配套图片位于 `images/` 文件夹。
 
 **章节组织**：（待用户规划）
 

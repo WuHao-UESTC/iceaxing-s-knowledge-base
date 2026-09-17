@@ -218,7 +218,7 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：深化复习——不再停留在"概念是什么"的层面，重在**建立概念之间的深层联系**和**提炼物理洞察**。笔记应比首次学习更凝练，跳过基础定义复述，直击核心洞察和易忽略的微妙之处。
 
-**教材位置**：`E:\study_Magneticelectronic Theory\ai-reading\textbook-md\`
+**教材位置**：`E:\_textbook-md\工程电磁场\textbook-md\`
 
 教材为单个 markdown 文件：
 - `工程电磁场-第8版.md`
@@ -270,7 +270,7 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重概念的物理背景和设计动机——每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。推导深度与通用标准一致：关键结论详细解释，推导过程仅写关键步骤与思想方法，不展开全部代数。
 
-**教材位置**：`E:\study_Microwave Engineering\ai-reading\textbook-md\`
+**教材位置**：`E:\_textbook-md\Microwave Engineering\textbook-md\`
 
 教材为单个 markdown 文件：
 - `Microwave Engineering - Pozar - merged.md`
