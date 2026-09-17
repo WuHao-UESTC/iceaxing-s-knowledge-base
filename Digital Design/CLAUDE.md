@@ -229,7 +229,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：第 2 次学习 —— 巩固数字逻辑设计根基，侧重设计实践与 Verilog。以物理直觉（信号时序、电路行为）为引导、数学工具（布尔代数、时序分析）为定量支撑。
 
-**教材位置**：`E:\_textbook-md\数字设计原理与实践\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\数字设计原理与实践\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/数字设计原理与实践/textbook-md/`
 
 教材为单个 markdown 文件：
 - `数字设计原理与实践第5版.md`
@@ -257,7 +259,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：第 2 次学习 —— 以体系结构为目标的数字设计整合。与 Wakerly 的知识点高度重叠但视角不同：Wakerly 从逻辑设计往上走，Harris 从体系结构往下看。
 
-**教材位置**：`E:\_textbook-md\数字设计和计算机体系结构\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\数字设计和计算机体系结构\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/数字设计和计算机体系结构/textbook-md/`
 
 教材为单个 markdown 文件：
 - `数字设计和计算机体系结构.md`
@@ -290,7 +294,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：第 1 次学习 —— 需要更加注重概念的物理背景和设计动机。每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。推导深度与通用标准一致：关键结论详细解释，推导过程仅写关键步骤与思想方法。
 
-**教材位置**：`E:\_textbook-md\Computer Organization and Design\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\Computer Organization and Design\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/Computer Organization and Design/textbook-md/`
 
 教材为单个 markdown 文件：
 - `Computer-Organization-and-Design-RISC-V-Edition.md`
@@ -325,7 +331,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：第 1 次学习 —— 体系结构高级纵深，Patterson COD 的"研究生级"进阶。以量化设计方法论为纲，每个设计决策用数据和公式评估（Amdahl's Law、性能方程、能耗方程）。需要 COD 的基础概念作为前提。
 
-**教材位置**：`E:\_textbook-md\Conputer Architechture(Quantitive)\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\Conputer Architechture(Quantitive)\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/Conputer Architechture(Quantitive)/textbook-md/`
 
 教材为单个 markdown 文件：
 - `Computer-Architecture-6th-Edition.md`

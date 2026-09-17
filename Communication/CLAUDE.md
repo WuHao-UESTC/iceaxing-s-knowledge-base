@@ -213,7 +213,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：复习笔记——以回顾和深化为主，重点打通与通信原理、无线通信的数学桥梁。不再逐章逐节重述，而是聚焦关键概念的本质理解和跨域关联。
 
-**教材位置**：`E:\_textbook-md\Signal and System\textbook\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\Signal and System\textbook\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/Signal and System/textbook/`
 
 教材为单个 markdown 文件：
 - `Signals_and_Systems_Oppenheim_2nd.md`
@@ -246,7 +248,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：首次学习笔记——需注重概念的物理背景和系统设计动机。每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。
 
-**教材位置**：`E:\_textbook-md\通信原理\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\通信原理\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/通信原理/textbook-md/`
 
 教材为 10 个部分 + 1 个完整版：
 - `通信原理_完整版.md`
@@ -286,7 +290,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：首次学习笔记——需注重概念的物理背景和系统设计动机。在通信原理的基础上，深入无线信道的独特挑战（衰落、多径、移动性）及应对技术。
 
-**教材位置**：`E:\_textbook-md\Wireless Communication\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\Wireless Communication\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/Wireless Communication/textbook-md/`
 
 教材为单个 markdown 文件：
 - `Wireless-Communications-Goldsmith.md`

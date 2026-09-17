@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-本文件夹是 **集成电路（IC）** 的知识体系仓库，覆盖模拟 IC、RF IC 以及微电子工艺与封装。以多本经典教材和论文为学习路径，建立互相贯通的知识索引。
+本文件夹是 **集成电路（IC）** 的知识体系仓库，覆盖模拟 IC、数字 IC、RF IC 以及微电子工艺与封装。以多本经典教材和论文为学习路径，建立互相贯通的知识索引。
 
 **核心理念**：
 - 知识是同一套（MOSFET 物理、电路拓扑、设计方法论），但不同教材/论文的"切法"不同
@@ -21,6 +21,8 @@ IC/
 │   ├── 单级放大器.md
 │   ├── 差分放大器.md
 │   └── 电流镜与偏置技术.md
+│
+├── Rabaey-数字集成电路/                          # [子文件夹] 数字 IC 教材笔记（首次学习）
 │
 ├── Razavi-RF Microelectronics/                  # [子文件夹] RF IC 教材笔记
 │   ├── Basic Concept.md
@@ -229,7 +231,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：辅助教材——需对照原书阅读，不替代原书。以物理直觉为引导、数学推导为定量支撑。
 
-**教材位置**：`E:\_textbook-md\模集-拉扎维\textbook-md-MinerU\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\模集-拉扎维\textbook-md-MinerU\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/模集-拉扎维/textbook-md-MinerU/`
 
 教材由 4 个 markdown 文件组成，覆盖原书第 1–801 页：
 - `pages_001-200.md`
@@ -255,13 +259,45 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 ---
 
+### Rabaey — 《数字集成电路——电路、系统与设计》（第二版）
+
+**子文件夹**：`Rabaey-数字集成电路/`
+
+**笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重概念的物理背景和设计动机——每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。推导深度与模拟 CMOS 教材一致：关键结论详细解释，推导过程仅写关键步骤与思想方法，不展开全部代数。
+
+**教材位置**：
+- **Windows**：`E:\_textbook-md\数字集成电路\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/数字集成电路/`
+
+教材为单个 markdown 文件：
+- `数字集成电路.md`
+
+配套图片位于 `images/` 文件夹。
+
+**教材特点**：Rabaey《数字集成电路——电路、系统与设计》（Digital Integrated Circuits: A Design Perspective，第二版）是数字 IC 设计领域的经典教材，以 CMOS 数字电路为主线，从器件与互连线特性出发，深入反相器、组合逻辑、时序逻辑、数据通路、存储器等，覆盖深亚微米工艺下的功耗、时序、互连线、时钟分配、验证与可测性设计。与模拟 CMOS（Razavi）形成上下游互补——模拟设计关注增益/带宽/摆幅，数字设计关注速度/面积/功耗的折中。
+
+**章节组织**：
+- 不严格遵循原书章节编号，按用户规划命名
+- 章节顺序由用户逐步添加
+
+**覆盖范围**：
+- ✅ 教材正文
+- ✅ 例题
+- ❌ 课后习题（目前不覆盖）
+
+**当前进度**：尚未开始
+
+---
+
 ### Razavi — 《RF Microelectronics》（第二版）
 
 **子文件夹**：`Razavi-RF Microelectronics/`
 
 **笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重概念的物理背景和设计动机——每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。推导深度与模拟 CMOS 教材一致：关键结论详细解释，推导过程仅写关键步骤与思想方法，不展开全部代数。
 
-**教材位置**：`E:\_textbook-md\RF Microelectronics-拉扎维\textbook\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\RF Microelectronics-拉扎维\textbook\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/RF Microelectronics-拉扎维/textbook/`
 
 教材为单个 markdown 文件：
 - `RF_Microelectronics.md`
@@ -296,7 +332,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重概念的物理背景和设计动机——每个新概念需交代"为什么需要它"、给出数值量级感、充分展开例子。推导深度与其他教材一致：关键结论详细解释，推导过程仅写关键步骤与思想方法，不展开全部代数。
 
-**教材位置**：`E:\_textbook-md\RF Circuit Design-Theory and Applications\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\RF Circuit Design-Theory and Applications\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/RF Circuit Design-Theory and Applications/`
 
 教材为单个 markdown 文件：
 - `RF_Circuit_Design_Theory_and_Applications.md`
@@ -336,7 +374,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **笔记定位**：本书为 **首次学习**，笔记需在通用标准基础上更加注重工艺的物理/化学机理与动机——每个新工艺交代"为什么需要它"、给出量级感（温度、膜厚、掺杂浓度、气压等）、充分展开例子。机理深度与其他教材一致：关键机理详细解释，定量关系仅写关键公式与思想方法，不展开全部代数。
 
-**教材位置**：`E:\_textbook-md\半导体制造技术\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\半导体制造技术\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/半导体制造技术/`
 
 教材为单个 markdown 文件（UTF-8 编码）：
 - `半导体制造技术.md`（约 1.4 MB，14,134 行）
@@ -373,7 +413,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **教材特点**：Sansen 以设计方法论为核心，强调 gm/Id 设计空间探索、设计方程和 sizing 策略。笔记风格应偏向设计导向——设计参数如何选取、折中如何量化、设计流程如何组织。
 
-**教材位置**：`E:\_textbook-md\精粹-Sansen\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\精粹-Sansen\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/精粹-Sansen/textbook-md/`
 
 教材为单个 markdown 文件：
 - `Analog_Design_Essentials_Sansen.md`
@@ -392,7 +434,9 @@ AI 在撰写新章节笔记前，应执行以下步骤：
 
 **教材特点**：ADC 专项——精度/失配/动态性能为主线，系统级架构（SAR / ΣΔ / Pipeline）。笔记风格应偏向精度分析和系统级设计折中。
 
-**教材位置**：`E:\_textbook-md\ADC-Plegrom\textbook-md\`
+**教材位置**：
+- **Windows**：`E:\_textbook-md\ADC-Plegrom\textbook-md\`
+- **Linux**：`/home/iceaxing/MyDoc/_textbook-md/ADC-Plegrom/textbook-md/`
 
 教材为单个 markdown 文件：
 - `Analog-to-Digital Conversion.md`
