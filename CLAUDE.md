@@ -11,6 +11,7 @@
 | `Communication/` | 通信系统 |
 | `Digital Design/` | 数字设计 |
 | `IC/` | 集成电路（模拟 IC、数字 IC、RF IC、工艺与封装） |
+| `AI/` | 人工智能（机器学习） |
 | `Magneticelectro Theory/` | 电磁理论 |
 | `IELTS/口语语料库/` | 雅思口语语料库 |
 
